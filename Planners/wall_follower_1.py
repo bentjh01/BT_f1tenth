@@ -7,11 +7,11 @@ from sensor_msgs.msg import LaserScan
 from ackermann_msgs.msg import AckermannDriveStamped
 from nav_msgs.msg import Odometry
 
-from controllers import PID
+from Controllers import PID
 
 # reference: https://github.com/f1tenth/f1tenth_labs_openrepo/blob/main/f1tenth_lab3/README.md
 
-class Wall_Follower(Node):
+class WallFollower(Node):
 
     def __init__(self):
         super().__init__('wall_follower')
@@ -32,7 +32,7 @@ class Wall_Follower(Node):
         self.pid = PID(0.2, 0.01, 0.)
         self.pid.set_point = self.set_dist2wall
 
-        # 
+        # WallFollower Params
         self.count = 0
         self.last_time = 0.
         self.lookahead_dist = 0.
@@ -96,7 +96,7 @@ class Wall_Follower(Node):
             control_signal = self.angle_max
         return sign * control_signal 
     
-    def clip_drive_msgs(self):
+    # def clip_drive_msgs(self):
 
 
     def get_drive_msg(self, pred_dist2wall, dt):
@@ -145,7 +145,7 @@ class Wall_Follower(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    wall_follower = Wall_Follower()
+    wall_follower = WallFollower()
 
     rclpy.spin(wall_follower)
 
