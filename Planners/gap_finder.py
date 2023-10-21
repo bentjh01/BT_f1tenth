@@ -92,7 +92,7 @@ class GapFinder(Node):
         self.min_range = self.ranges[min_range_index]
 
     def rolling_mean(self, avg, x_n, n):
-        n = n + 1 # index correction
+        n = n + 1 # index correctioni
         avg = ((n-1) * avg + x_n)/n
         return avg
     
