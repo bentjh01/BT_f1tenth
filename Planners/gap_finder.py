@@ -1,3 +1,13 @@
+"""
+Copyright 2023 Benjamin Teh Jhen Hing
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+End license text.
+"""
 import math
 import numpy as np
 
@@ -10,6 +20,7 @@ from nav_msgs.msg import Odometry
 
 from Controllers import PID
 from Config.scan_config import SimScanConfig
+from Config.car_config import F1tenthCar
 
 # reference: https://github.com/f1tenth/f1tenth_labs_openrepo/blob/main/f1tenth_lab4/README.md
 
@@ -38,6 +49,7 @@ from Config.scan_config import SimScanConfig
 # Scale linear velocity to the distance to closest obstacle
 
 scanConfig = SimScanConfig()
+carConfig = F1tenthCar()
 
 class GapFinder(Node):
 
@@ -66,8 +78,13 @@ class GapFinder(Node):
         self.speed_controller.dt = 1/self.pub_rate
         self.min_range = 0
         # Car Control Signal
-        self.speed = 0.
-        self.steering_angle = 0.
+        self.set_speed = 0.
+        self.set_steering_angle = 0.
+        self.cmd_speed = 0.
+        self.cmd_steering_angle = 0.
+        # Odom
+        self.odom_speed = 0.
+        self.odom_steering_angle = 0.
 
     def get_time(self, scan_msg):
         sec = scan_msg.header.stamp.sec
@@ -76,7 +93,7 @@ class GapFinder(Node):
         return ros_time
 
     def scan_callback(self, scan_msg):
-        self.ros_time = self.get_time(scan_msg)
+        self.scan_time = self.get_time(scan_msg)
         self.ranges = scanConfig.reorientate(scan_msg.ranges)
 
     # def odom_callback(self, odom_msg):
@@ -87,16 +104,24 @@ class GapFinder(Node):
         min_range_index = self.modified_ranges.index(min(self.modified_ranges))
         arc_thetha = self.modified_ranges[min_range_index] * self.angle_increment
         n_cutoff = self.safety_bubble/arc_thetha//2
-        for i in range(int(min_range_index-n_cutoff), int(min_range_index+n_cutoff,1)):
+        for i in range(int(min_range_index-n_cutoff), int(min_range_index+n_cutoff+1)):
             self.modified_ranges[i] = 0.0
         self.min_range = self.ranges[min_range_index]
 
-    def rolling_mean(self, avg, x_n, n):
-        n = n + 1 # index correctioni
-        avg = ((n-1) * avg + x_n)/n
-        return avg
-    
-    def get_max_range_index (self):
+    # def rolling_mean(self, avg, x_n, n):
+    #     n = n + 1 # index correctioni
+    #     avg = ((n-1) * avg + x_n)/n
+    #     return avg
+
+    def ranges_angle_2_base_angle(self, index):
+        # receive index wrt to ranges and output angle (deg) wrt to base frame
+        # assumes left-back 
+        ranges_mid_angle = (scanConfig.max_angle-scanConfig.min_angle)/2
+        ranges_angle = index*scanConfig.angle_increment
+        base_angle = ranges_angle-ranges_mid_angle
+        return base_angle  
+
+    def get_max_range_index(self):
         # this function returns the index of the range that has the highest average in n*2 consecutive ranges. 
         mean_ranges = []
         n = self.margin_bubble_count
@@ -107,50 +132,46 @@ class GapFinder(Node):
                 mean -= self.modified_ranges[i-n]/n
             mean_ranges.append(mean)
         max_range_index = mean_ranges.index(max(mean_ranges))
-        self.steering_angle = self.ranges_angle_2_base_angle(max_range_index)
         self.max_range = self.modified_ranges[max_range_index]
+        steering_angle = self.ranges_angle_2_base_angle(max_range_index)
+        return steering_angle
 
-    def ranges_angle_2_base_angle(self, index):
-        # receive index wrt to ranges and output angle (deg) wrt to base frame
-        # assumes left-back 
-        ranges_mid_angle = (scanConfig.max_angle-scanConfig.min_angle)/2
-        ranges_angle = index*scanConfig.angle_increment
-        base_angle = ranges_angle-ranges_mid_angle
-        return base_angle  
+    def steering_control(self):
+        self.set_steering_angle = self.get_max_range_index()
+        self.cmd_steering_angle = carConfig.apply_steering_limits(self.set_steering_angle, self.odom_steering_angle, 1/self.pub_rate)
+        self.odom_steering_angle = self.cmd_steering_angle
     
     def speed_control(self):
-        speed = self.speed_controller.update(self.min_range)
-        self.speed = speeds
+        self.set_speed = self.speed_controller.update(self.min_range)
+        self.cmd_speed = carConfig.apply_speed_limits(self.set_speed, self.odom_speed, 1/self.pub_rate)
+        self.odom_speed = self.cmd_speed
     
-    def generate_drive_msg(self, steering_angle, dt):
+    def generate_drive_msg(self):
         drive_msg = AckermannDriveStamped()
-        drive_msg.drive.speed = self.speed
-        drive_msg.drive.steering_angle = self.steering_angle
+        self.speed_control()
+        drive_msg.drive.speed = self.cmd_speed
+        self.steering_control
+        drive_msg.drive.steering_angle = self.cmd_steering_angle
         return drive_msg
     
     def timer_callback(self):
-        if self.count >= 1:
-            dt = self.ros_time - self.last_time
-            dist2wall, pred_dist2wall = self.find_dist2wall(89, 90)
-            self.collision()
-            drive_msg = self.get_drive_msg(pred_dist2wall, dt)
-            self.drive_publisher.publish(drive_msg)
-            # print(f"steering_angle = {round(drive_msg.drive.steering_angle,2)}, dist2wall = {round(dist2wall, 2)}")
-            # print(f"{self.e_brake}")
-            self.lookahead_dist = drive_msg.drive.speed * dt
-            self.last_time = self.ros_time
+        self.apply_safetybubble()
+        self.steering_control()
+        self.speed_control()
+        drive_msg = self.generate_drive_msg()
+        self.drive_publisher.publish(drive_msg)
 
 def main(args=None):
     rclpy.init(args=args)
 
-    wall_follower = GapFinder()
+    gapFinder = GapFinder()
 
-    rclpy.spin(wall_follower)
+    rclpy.spin(gapFinder)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    wall_follower.destroy_node()
+    gapFinder.destroy_node()
     rclpy.shutdown()
 
 

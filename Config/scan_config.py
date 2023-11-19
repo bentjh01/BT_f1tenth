@@ -11,7 +11,7 @@ class SimScanConfig():
         self.ranges_count = 1080
 
     def reorientate(self, ranges:list):
-        return ranges.reverse()
+        return ranges
 
 class CarScanConfig():
     #TODO - calibrate
