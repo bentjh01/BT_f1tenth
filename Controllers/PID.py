@@ -19,13 +19,14 @@ class PID:
 
         self.integral_cutoff = None
 
-    def update(self, feedback, dt):
+    def update(self, feedback, dt=None):
         error = self.set_point - feedback
-        if dt == 0:
-            self.dt = self.prev_dt
-        else:
-            self.dt = dt
-            self.prev_dt = dt
+        if dt is not None:
+            if dt == 0:
+                self.dt = self.prev_dt
+            else:
+                self.dt = dt
+                self.prev_dt = dt
 
         self.P_term = self.Kp * error + self.bias
 
