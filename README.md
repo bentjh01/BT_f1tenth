@@ -1,2 +1,6 @@
-# BT_f1tenth
-This repo is to contain multiple navigation and path planning stacks
+# F1TENTH
+This repo contains the f1tenth system, simulator, and gym. 
+## Setup
+```
+git clone https://github.com/bentjh01/BT_f1tenth.git
+```
