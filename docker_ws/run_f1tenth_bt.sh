@@ -2,11 +2,11 @@
 
 container_name=f1tenth_bt
 function create_container {
-        docker run -it\
+        docker run -it --rm\
         --name ${container_name} \
         -h ${container_name} \
         --network=host \
-		--volume="$(pwd)/mnt":"/mnt" \
+	--volume="$(pwd)/..":"/mnt" \
         bentjh01:f1tenth-foxy
 }
 function rm_container {
