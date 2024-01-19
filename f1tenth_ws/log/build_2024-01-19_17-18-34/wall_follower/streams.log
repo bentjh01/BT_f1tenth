@@ -1,0 +1,20 @@
+[0.452s] Invoking command in '/mnt/f1tenth_ws/src/wall_follower': PYTHONPATH=/mnt/f1tenth_ws/build/wall_follower/prefix_override:/mnt/f1tenth_ws/install/wall_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/wall_follower build --build-base /mnt/f1tenth_ws/build/wall_follower/build install --record /mnt/f1tenth_ws/build/wall_follower/install.log --install-scripts $base/lib/wall_follower --single-version-externally-managed
+[0.536s] running egg_info
+[0.538s] writing ../../build/wall_follower/wall_follower.egg-info/PKG-INFO
+[0.540s] writing dependency_links to ../../build/wall_follower/wall_follower.egg-info/dependency_links.txt
+[0.541s] writing entry points to ../../build/wall_follower/wall_follower.egg-info/entry_points.txt
+[0.542s] writing requirements to ../../build/wall_follower/wall_follower.egg-info/requires.txt
+[0.543s] writing top-level names to ../../build/wall_follower/wall_follower.egg-info/top_level.txt
+[0.564s] reading manifest file '../../build/wall_follower/wall_follower.egg-info/SOURCES.txt'
+[0.565s] writing manifest file '../../build/wall_follower/wall_follower.egg-info/SOURCES.txt'
+[0.566s] running build
+[0.566s] running build_py
+[0.567s] running install
+[0.571s] running install_lib
+[0.572s] running install_data
+[0.572s] running install_egg_info
+[0.573s] removing '/mnt/f1tenth_ws/install/wall_follower/lib/python3.8/site-packages/wall_follower-0.0.0-py3.8.egg-info' (and everything under it)
+[0.573s] Copying ../../build/wall_follower/wall_follower.egg-info to /mnt/f1tenth_ws/install/wall_follower/lib/python3.8/site-packages/wall_follower-0.0.0-py3.8.egg-info
+[0.585s] running install_scripts
+[0.597s] writing list of installed files to '/mnt/f1tenth_ws/build/wall_follower/install.log'
+[0.627s] Invoked command in '/mnt/f1tenth_ws/src/wall_follower' returned '0': PYTHONPATH=/mnt/f1tenth_ws/build/wall_follower/prefix_override:/mnt/f1tenth_ws/install/wall_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/wall_follower build --build-base /mnt/f1tenth_ws/build/wall_follower/build install --record /mnt/f1tenth_ws/build/wall_follower/install.log --install-scripts $base/lib/wall_follower --single-version-externally-managed

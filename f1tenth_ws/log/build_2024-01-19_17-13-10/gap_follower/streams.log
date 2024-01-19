@@ -1,0 +1,33 @@
+[0.509s] Invoking command in '/mnt/f1tenth_ws/src/gap_follower': PYTHONPATH=/mnt/f1tenth_ws/build/gap_follower/prefix_override:/mnt/f1tenth_ws/install/gap_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gap_follower build --build-base /mnt/f1tenth_ws/build/gap_follower/build install --record /mnt/f1tenth_ws/build/gap_follower/install.log --install-scripts $base/lib/gap_follower --single-version-externally-managed
+[0.594s] running egg_info
+[0.596s] creating ../../build/gap_follower/gap_follower.egg-info
+[0.597s] writing ../../build/gap_follower/gap_follower.egg-info/PKG-INFO
+[0.599s] writing dependency_links to ../../build/gap_follower/gap_follower.egg-info/dependency_links.txt
+[0.599s] writing entry points to ../../build/gap_follower/gap_follower.egg-info/entry_points.txt
+[0.600s] writing requirements to ../../build/gap_follower/gap_follower.egg-info/requires.txt
+[0.601s] writing top-level names to ../../build/gap_follower/gap_follower.egg-info/top_level.txt
+[0.602s] writing manifest file '../../build/gap_follower/gap_follower.egg-info/SOURCES.txt'
+[0.621s] reading manifest file '../../build/gap_follower/gap_follower.egg-info/SOURCES.txt'
+[0.624s] writing manifest file '../../build/gap_follower/gap_follower.egg-info/SOURCES.txt'
+[0.625s] running build
+[0.626s] running build_py
+[0.628s] creating /mnt/f1tenth_ws/build/gap_follower/build
+[0.628s] creating /mnt/f1tenth_ws/build/gap_follower/build/lib
+[0.629s] creating /mnt/f1tenth_ws/build/gap_follower/build/lib/gap_follower
+[0.629s] copying gap_follower/__init__.py -> /mnt/f1tenth_ws/build/gap_follower/build/lib/gap_follower
+[0.631s] running install
+[0.632s] running install_lib
+[0.634s] creating /mnt/f1tenth_ws/install/gap_follower/lib/python3.8/site-packages/gap_follower
+[0.634s] copying /mnt/f1tenth_ws/build/gap_follower/build/lib/gap_follower/__init__.py -> /mnt/f1tenth_ws/install/gap_follower/lib/python3.8/site-packages/gap_follower
+[0.636s] byte-compiling /mnt/f1tenth_ws/install/gap_follower/lib/python3.8/site-packages/gap_follower/__init__.py to __init__.cpython-38.pyc
+[0.644s] running install_data
+[0.645s] creating /mnt/f1tenth_ws/install/gap_follower/share/ament_index
+[0.646s] creating /mnt/f1tenth_ws/install/gap_follower/share/ament_index/resource_index
+[0.647s] creating /mnt/f1tenth_ws/install/gap_follower/share/ament_index/resource_index/packages
+[0.649s] copying resource/gap_follower -> /mnt/f1tenth_ws/install/gap_follower/share/ament_index/resource_index/packages
+[0.652s] copying package.xml -> /mnt/f1tenth_ws/install/gap_follower/share/gap_follower
+[0.653s] running install_egg_info
+[0.654s] Copying ../../build/gap_follower/gap_follower.egg-info to /mnt/f1tenth_ws/install/gap_follower/lib/python3.8/site-packages/gap_follower-0.0.0-py3.8.egg-info
+[0.661s] running install_scripts
+[0.662s] writing list of installed files to '/mnt/f1tenth_ws/build/gap_follower/install.log'
+[0.706s] Invoked command in '/mnt/f1tenth_ws/src/gap_follower' returned '0': PYTHONPATH=/mnt/f1tenth_ws/build/gap_follower/prefix_override:/mnt/f1tenth_ws/install/gap_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gap_follower build --build-base /mnt/f1tenth_ws/build/gap_follower/build install --record /mnt/f1tenth_ws/build/gap_follower/install.log --install-scripts $base/lib/gap_follower --single-version-externally-managed

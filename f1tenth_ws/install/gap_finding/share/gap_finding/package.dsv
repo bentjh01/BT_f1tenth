@@ -1,0 +1,6 @@
+source;share/gap_finding/hook/pythonpath.ps1
+source;share/gap_finding/hook/pythonpath.dsv
+source;share/gap_finding/hook/pythonpath.sh
+source;share/gap_finding/hook/ament_prefix_path.ps1
+source;share/gap_finding/hook/ament_prefix_path.dsv
+source;share/gap_finding/hook/ament_prefix_path.sh

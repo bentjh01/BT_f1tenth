@@ -1,0 +1,23 @@
+[0.478s] Invoking command in '/mnt/f1tenth_ws/src/automatic_emergency_braking': PYTHONPATH=/mnt/f1tenth_ws/build/automatic_emergency_braking/prefix_override:/mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/automatic_emergency_braking build --build-base /mnt/f1tenth_ws/build/automatic_emergency_braking/build install --record /mnt/f1tenth_ws/build/automatic_emergency_braking/install.log --install-scripts $base/lib/automatic_emergency_braking --single-version-externally-managed
+[0.562s] running egg_info
+[0.563s] writing ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/PKG-INFO
+[0.563s] writing dependency_links to ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/dependency_links.txt
+[0.564s] writing entry points to ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/entry_points.txt
+[0.565s] writing requirements to ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/requires.txt
+[0.566s] writing top-level names to ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/top_level.txt
+[0.589s] reading manifest file '../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/SOURCES.txt'
+[0.590s] writing manifest file '../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/SOURCES.txt'
+[0.591s] running build
+[0.591s] running build_py
+[0.592s] copying automatic_emergency_braking/automatic_emergency_braking.py -> /mnt/f1tenth_ws/build/automatic_emergency_braking/build/lib/automatic_emergency_braking
+[0.594s] running install
+[0.594s] running install_lib
+[0.597s] copying /mnt/f1tenth_ws/build/automatic_emergency_braking/build/lib/automatic_emergency_braking/automatic_emergency_braking.py -> /mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages/automatic_emergency_braking
+[0.603s] byte-compiling /mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages/automatic_emergency_braking/automatic_emergency_braking.py to automatic_emergency_braking.cpython-38.pyc
+[0.608s] running install_data
+[0.610s] running install_egg_info
+[0.612s] removing '/mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages/automatic_emergency_braking-0.0.0-py3.8.egg-info' (and everything under it)
+[0.616s] Copying ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info to /mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages/automatic_emergency_braking-0.0.0-py3.8.egg-info
+[0.621s] running install_scripts
+[0.631s] writing list of installed files to '/mnt/f1tenth_ws/build/automatic_emergency_braking/install.log'
+[0.673s] Invoked command in '/mnt/f1tenth_ws/src/automatic_emergency_braking' returned '0': PYTHONPATH=/mnt/f1tenth_ws/build/automatic_emergency_braking/prefix_override:/mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/automatic_emergency_braking build --build-base /mnt/f1tenth_ws/build/automatic_emergency_braking/build install --record /mnt/f1tenth_ws/build/automatic_emergency_braking/install.log --install-scripts $base/lib/automatic_emergency_braking --single-version-externally-managed

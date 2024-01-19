@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/gap_finding/gap_finding.egg-info
+writing ../../build/gap_finding/gap_finding.egg-info/PKG-INFO
+writing dependency_links to ../../build/gap_finding/gap_finding.egg-info/dependency_links.txt
+writing entry points to ../../build/gap_finding/gap_finding.egg-info/entry_points.txt
+writing requirements to ../../build/gap_finding/gap_finding.egg-info/requires.txt
+writing top-level names to ../../build/gap_finding/gap_finding.egg-info/top_level.txt
+writing manifest file '../../build/gap_finding/gap_finding.egg-info/SOURCES.txt'
+reading manifest file '../../build/gap_finding/gap_finding.egg-info/SOURCES.txt'
+writing manifest file '../../build/gap_finding/gap_finding.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /mnt/f1tenth_ws/build/gap_finding/build
+creating /mnt/f1tenth_ws/build/gap_finding/build/lib
+creating /mnt/f1tenth_ws/build/gap_finding/build/lib/gap_finding
+copying gap_finding/__init__.py -> /mnt/f1tenth_ws/build/gap_finding/build/lib/gap_finding
+running install
+running install_lib
+creating /mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages/gap_finding
+copying /mnt/f1tenth_ws/build/gap_finding/build/lib/gap_finding/__init__.py -> /mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages/gap_finding
+byte-compiling /mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages/gap_finding/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /mnt/f1tenth_ws/install/gap_finding/share/ament_index
+creating /mnt/f1tenth_ws/install/gap_finding/share/ament_index/resource_index
+creating /mnt/f1tenth_ws/install/gap_finding/share/ament_index/resource_index/packages
+copying resource/gap_finding -> /mnt/f1tenth_ws/install/gap_finding/share/ament_index/resource_index/packages
+copying package.xml -> /mnt/f1tenth_ws/install/gap_finding/share/gap_finding
+running install_egg_info
+Copying ../../build/gap_finding/gap_finding.egg-info to /mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages/gap_finding-0.0.0-py3.8.egg-info
+running install_scripts
+writing list of installed files to '/mnt/f1tenth_ws/build/gap_finding/install.log'

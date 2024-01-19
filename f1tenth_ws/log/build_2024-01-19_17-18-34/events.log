@@ -1,0 +1,90 @@
+[0.000000] (-) TimerEvent: {}
+[0.000209] (automatic_emergency_braking) JobQueued: {'identifier': 'automatic_emergency_braking', 'dependencies': OrderedDict()}
+[0.000403] (gap_finder) JobQueued: {'identifier': 'gap_finder', 'dependencies': OrderedDict()}
+[0.000597] (wall_follower) JobQueued: {'identifier': 'wall_follower', 'dependencies': OrderedDict()}
+[0.000725] (automatic_emergency_braking) JobStarted: {'identifier': 'automatic_emergency_braking'}
+[0.011035] (gap_finder) JobStarted: {'identifier': 'gap_finder'}
+[0.019124] (wall_follower) JobStarted: {'identifier': 'wall_follower'}
+[0.100151] (-) TimerEvent: {}
+[0.200790] (-) TimerEvent: {}
+[0.301216] (-) TimerEvent: {}
+[0.401591] (-) TimerEvent: {}
+[0.456852] (gap_finder) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/gap_finder', 'build', '--build-base', '/mnt/f1tenth_ws/build/gap_finder/build', 'install', '--record', '/mnt/f1tenth_ws/build/gap_finder/install.log', '--install-scripts', '$base/lib/gap_finder', '--single-version-externally-managed'], 'cwd': '/mnt/f1tenth_ws/src/gap_finder', 'env': {'HOSTNAME': 'f1tenth_bt', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/root', 'OLDPWD': '/mnt/f1tenth_ws/src', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'foxy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'PWD': '/mnt/f1tenth_ws/build/gap_finder', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/mnt/f1tenth_ws/build/gap_finder/prefix_override:/mnt/f1tenth_ws/install/gap_finder/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'COLCON': '1'}, 'shell': False}
+[0.464391] (automatic_emergency_braking) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/automatic_emergency_braking', 'build', '--build-base', '/mnt/f1tenth_ws/build/automatic_emergency_braking/build', 'install', '--record', '/mnt/f1tenth_ws/build/automatic_emergency_braking/install.log', '--install-scripts', '$base/lib/automatic_emergency_braking', '--single-version-externally-managed'], 'cwd': '/mnt/f1tenth_ws/src/automatic_emergency_braking', 'env': {'HOSTNAME': 'f1tenth_bt', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/root', 'OLDPWD': '/mnt/f1tenth_ws/src', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'foxy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'PWD': '/mnt/f1tenth_ws/build/automatic_emergency_braking', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/mnt/f1tenth_ws/build/automatic_emergency_braking/prefix_override:/mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'COLCON': '1'}, 'shell': False}
+[0.468776] (wall_follower) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/wall_follower', 'build', '--build-base', '/mnt/f1tenth_ws/build/wall_follower/build', 'install', '--record', '/mnt/f1tenth_ws/build/wall_follower/install.log', '--install-scripts', '$base/lib/wall_follower', '--single-version-externally-managed'], 'cwd': '/mnt/f1tenth_ws/src/wall_follower', 'env': {'HOSTNAME': 'f1tenth_bt', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/root', 'OLDPWD': '/mnt/f1tenth_ws/src', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'foxy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'PWD': '/mnt/f1tenth_ws/build/wall_follower', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/mnt/f1tenth_ws/build/wall_follower/prefix_override:/mnt/f1tenth_ws/install/wall_follower/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'COLCON': '1'}, 'shell': False}
+[0.502258] (-) TimerEvent: {}
+[0.543221] (gap_finder) StdoutLine: {'line': b'running egg_info\n'}
+[0.544232] (gap_finder) StdoutLine: {'line': b'creating ../../build/gap_finder/gap_finder.egg-info\n'}
+[0.545107] (gap_finder) StdoutLine: {'line': b'writing ../../build/gap_finder/gap_finder.egg-info/PKG-INFO\n'}
+[0.545892] (gap_finder) StdoutLine: {'line': b'writing dependency_links to ../../build/gap_finder/gap_finder.egg-info/dependency_links.txt\n'}
+[0.546975] (gap_finder) StdoutLine: {'line': b'writing entry points to ../../build/gap_finder/gap_finder.egg-info/entry_points.txt\n'}
+[0.548032] (gap_finder) StdoutLine: {'line': b'writing requirements to ../../build/gap_finder/gap_finder.egg-info/requires.txt\n'}
+[0.548822] (gap_finder) StdoutLine: {'line': b'writing top-level names to ../../build/gap_finder/gap_finder.egg-info/top_level.txt\n'}
+[0.550078] (gap_finder) StdoutLine: {'line': b"writing manifest file '../../build/gap_finder/gap_finder.egg-info/SOURCES.txt'\n"}
+[0.555045] (wall_follower) StdoutLine: {'line': b'running egg_info\n'}
+[0.557061] (wall_follower) StdoutLine: {'line': b'writing ../../build/wall_follower/wall_follower.egg-info/PKG-INFO\n'}
+[0.557835] (automatic_emergency_braking) StdoutLine: {'line': b'running egg_info\n'}
+[0.558527] (automatic_emergency_braking) StdoutLine: {'line': b'writing ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/PKG-INFO\n'}
+[0.559162] (wall_follower) StdoutLine: {'line': b'writing dependency_links to ../../build/wall_follower/wall_follower.egg-info/dependency_links.txt\n'}
+[0.559710] (wall_follower) StdoutLine: {'line': b'writing entry points to ../../build/wall_follower/wall_follower.egg-info/entry_points.txt\n'}
+[0.560226] (automatic_emergency_braking) StdoutLine: {'line': b'writing dependency_links to ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/dependency_links.txt\n'}
+[0.560704] (wall_follower) StdoutLine: {'line': b'writing requirements to ../../build/wall_follower/wall_follower.egg-info/requires.txt\n'}
+[0.561238] (automatic_emergency_braking) StdoutLine: {'line': b'writing entry points to ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/entry_points.txt\n'}
+[0.561776] (wall_follower) StdoutLine: {'line': b'writing top-level names to ../../build/wall_follower/wall_follower.egg-info/top_level.txt\n'}
+[0.562233] (automatic_emergency_braking) StdoutLine: {'line': b'writing requirements to ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/requires.txt\n'}
+[0.562690] (automatic_emergency_braking) StdoutLine: {'line': b'writing top-level names to ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/top_level.txt\n'}
+[0.570990] (gap_finder) StdoutLine: {'line': b"reading manifest file '../../build/gap_finder/gap_finder.egg-info/SOURCES.txt'\n"}
+[0.572122] (gap_finder) StdoutLine: {'line': b"writing manifest file '../../build/gap_finder/gap_finder.egg-info/SOURCES.txt'\n"}
+[0.572674] (gap_finder) StdoutLine: {'line': b'running build\n'}
+[0.573153] (gap_finder) StdoutLine: {'line': b'running build_py\n'}
+[0.573842] (gap_finder) StdoutLine: {'line': b'creating /mnt/f1tenth_ws/build/gap_finder/build\n'}
+[0.574397] (gap_finder) StdoutLine: {'line': b'creating /mnt/f1tenth_ws/build/gap_finder/build/lib\n'}
+[0.574850] (gap_finder) StdoutLine: {'line': b'creating /mnt/f1tenth_ws/build/gap_finder/build/lib/gap_finder\n'}
+[0.575323] (gap_finder) StdoutLine: {'line': b'copying gap_finder/__init__.py -> /mnt/f1tenth_ws/build/gap_finder/build/lib/gap_finder\n'}
+[0.575715] (gap_finder) StdoutLine: {'line': b'running install\n'}
+[0.576144] (gap_finder) StdoutLine: {'line': b'running install_lib\n'}
+[0.576600] (gap_finder) StdoutLine: {'line': b'creating /mnt/f1tenth_ws/install/gap_finder/lib/python3.8/site-packages/gap_finder\n'}
+[0.577822] (gap_finder) StdoutLine: {'line': b'copying /mnt/f1tenth_ws/build/gap_finder/build/lib/gap_finder/__init__.py -> /mnt/f1tenth_ws/install/gap_finder/lib/python3.8/site-packages/gap_finder\n'}
+[0.578435] (gap_finder) StdoutLine: {'line': b'byte-compiling /mnt/f1tenth_ws/install/gap_finder/lib/python3.8/site-packages/gap_finder/__init__.py to __init__.cpython-38.pyc\n'}
+[0.579969] (gap_finder) StdoutLine: {'line': b'running install_data\n'}
+[0.580507] (gap_finder) StdoutLine: {'line': b'creating /mnt/f1tenth_ws/install/gap_finder/share/ament_index\n'}
+[0.581250] (gap_finder) StdoutLine: {'line': b'creating /mnt/f1tenth_ws/install/gap_finder/share/ament_index/resource_index\n'}
+[0.581872] (gap_finder) StdoutLine: {'line': b'creating /mnt/f1tenth_ws/install/gap_finder/share/ament_index/resource_index/packages\n'}
+[0.582545] (gap_finder) StdoutLine: {'line': b'copying resource/gap_finder -> /mnt/f1tenth_ws/install/gap_finder/share/ament_index/resource_index/packages\n'}
+[0.583092] (wall_follower) StdoutLine: {'line': b"reading manifest file '../../build/wall_follower/wall_follower.egg-info/SOURCES.txt'\n"}
+[0.583660] (gap_finder) StdoutLine: {'line': b'copying package.xml -> /mnt/f1tenth_ws/install/gap_finder/share/gap_finder\n'}
+[0.584168] (wall_follower) StdoutLine: {'line': b"writing manifest file '../../build/wall_follower/wall_follower.egg-info/SOURCES.txt'\n"}
+[0.584655] (wall_follower) StdoutLine: {'line': b'running build\n'}
+[0.585232] (wall_follower) StdoutLine: {'line': b'running build_py\n'}
+[0.585820] (gap_finder) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.586324] (wall_follower) StdoutLine: {'line': b'running install\n'}
+[0.586885] (gap_finder) StdoutLine: {'line': b'Copying ../../build/gap_finder/gap_finder.egg-info to /mnt/f1tenth_ws/install/gap_finder/lib/python3.8/site-packages/gap_finder-0.0.0-py3.8.egg-info\n'}
+[0.587460] (wall_follower) StdoutLine: {'line': b'running install_lib\n'}
+[0.590191] (wall_follower) StdoutLine: {'line': b'running install_data\n'}
+[0.591180] (wall_follower) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.591838] (wall_follower) StdoutLine: {'line': b"removing '/mnt/f1tenth_ws/install/wall_follower/lib/python3.8/site-packages/wall_follower-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[0.592345] (wall_follower) StdoutLine: {'line': b'Copying ../../build/wall_follower/wall_follower.egg-info to /mnt/f1tenth_ws/install/wall_follower/lib/python3.8/site-packages/wall_follower-0.0.0-py3.8.egg-info\n'}
+[0.592947] (automatic_emergency_braking) StdoutLine: {'line': b"reading manifest file '../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/SOURCES.txt'\n"}
+[0.593521] (automatic_emergency_braking) StdoutLine: {'line': b"writing manifest file '../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info/SOURCES.txt'\n"}
+[0.594089] (automatic_emergency_braking) StdoutLine: {'line': b'running build\n'}
+[0.594618] (automatic_emergency_braking) StdoutLine: {'line': b'running build_py\n'}
+[0.595232] (automatic_emergency_braking) StdoutLine: {'line': b'running install\n'}
+[0.596272] (automatic_emergency_braking) StdoutLine: {'line': b'running install_lib\n'}
+[0.597029] (gap_finder) StdoutLine: {'line': b'running install_scripts\n'}
+[0.597656] (automatic_emergency_braking) StdoutLine: {'line': b'running install_data\n'}
+[0.598583] (automatic_emergency_braking) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.601392] (automatic_emergency_braking) StdoutLine: {'line': b"removing '/mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages/automatic_emergency_braking-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[0.602678] (-) TimerEvent: {}
+[0.602888] (automatic_emergency_braking) StdoutLine: {'line': b'Copying ../../build/automatic_emergency_braking/automatic_emergency_braking.egg-info to /mnt/f1tenth_ws/install/automatic_emergency_braking/lib/python3.8/site-packages/automatic_emergency_braking-0.0.0-py3.8.egg-info\n'}
+[0.604182] (wall_follower) StdoutLine: {'line': b'running install_scripts\n'}
+[0.606581] (gap_finder) StdoutLine: {'line': b"writing list of installed files to '/mnt/f1tenth_ws/build/gap_finder/install.log'\n"}
+[0.614463] (automatic_emergency_braking) StdoutLine: {'line': b'running install_scripts\n'}
+[0.615619] (wall_follower) StdoutLine: {'line': b"writing list of installed files to '/mnt/f1tenth_ws/build/wall_follower/install.log'\n"}
+[0.623463] (gap_finder) CommandEnded: {'returncode': 0}
+[0.626627] (automatic_emergency_braking) StdoutLine: {'line': b"writing list of installed files to '/mnt/f1tenth_ws/build/automatic_emergency_braking/install.log'\n"}
+[0.643599] (gap_finder) JobEnded: {'identifier': 'gap_finder', 'rc': 0}
+[0.646339] (wall_follower) CommandEnded: {'returncode': 0}
+[0.661248] (wall_follower) JobEnded: {'identifier': 'wall_follower', 'rc': 0}
+[0.663625] (automatic_emergency_braking) CommandEnded: {'returncode': 0}
+[0.676225] (automatic_emergency_braking) JobEnded: {'identifier': 'automatic_emergency_braking', 'rc': 0}
+[0.677534] (-) EventReactorShutdown: {}

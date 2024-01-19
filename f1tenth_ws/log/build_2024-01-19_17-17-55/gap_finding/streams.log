@@ -1,0 +1,33 @@
+[0.475s] Invoking command in '/mnt/f1tenth_ws/src/gap_finding': PYTHONPATH=/mnt/f1tenth_ws/build/gap_finding/prefix_override:/mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gap_finding build --build-base /mnt/f1tenth_ws/build/gap_finding/build install --record /mnt/f1tenth_ws/build/gap_finding/install.log --install-scripts $base/lib/gap_finding --single-version-externally-managed
+[0.557s] running egg_info
+[0.558s] creating ../../build/gap_finding/gap_finding.egg-info
+[0.560s] writing ../../build/gap_finding/gap_finding.egg-info/PKG-INFO
+[0.561s] writing dependency_links to ../../build/gap_finding/gap_finding.egg-info/dependency_links.txt
+[0.561s] writing entry points to ../../build/gap_finding/gap_finding.egg-info/entry_points.txt
+[0.562s] writing requirements to ../../build/gap_finding/gap_finding.egg-info/requires.txt
+[0.563s] writing top-level names to ../../build/gap_finding/gap_finding.egg-info/top_level.txt
+[0.565s] writing manifest file '../../build/gap_finding/gap_finding.egg-info/SOURCES.txt'
+[0.584s] reading manifest file '../../build/gap_finding/gap_finding.egg-info/SOURCES.txt'
+[0.587s] writing manifest file '../../build/gap_finding/gap_finding.egg-info/SOURCES.txt'
+[0.587s] running build
+[0.588s] running build_py
+[0.589s] creating /mnt/f1tenth_ws/build/gap_finding/build
+[0.590s] creating /mnt/f1tenth_ws/build/gap_finding/build/lib
+[0.592s] creating /mnt/f1tenth_ws/build/gap_finding/build/lib/gap_finding
+[0.594s] copying gap_finding/__init__.py -> /mnt/f1tenth_ws/build/gap_finding/build/lib/gap_finding
+[0.595s] running install
+[0.596s] running install_lib
+[0.598s] creating /mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages/gap_finding
+[0.599s] copying /mnt/f1tenth_ws/build/gap_finding/build/lib/gap_finding/__init__.py -> /mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages/gap_finding
+[0.604s] byte-compiling /mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages/gap_finding/__init__.py to __init__.cpython-38.pyc
+[0.606s] running install_data
+[0.608s] creating /mnt/f1tenth_ws/install/gap_finding/share/ament_index
+[0.608s] creating /mnt/f1tenth_ws/install/gap_finding/share/ament_index/resource_index
+[0.609s] creating /mnt/f1tenth_ws/install/gap_finding/share/ament_index/resource_index/packages
+[0.610s] copying resource/gap_finding -> /mnt/f1tenth_ws/install/gap_finding/share/ament_index/resource_index/packages
+[0.610s] copying package.xml -> /mnt/f1tenth_ws/install/gap_finding/share/gap_finding
+[0.611s] running install_egg_info
+[0.611s] Copying ../../build/gap_finding/gap_finding.egg-info to /mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages/gap_finding-0.0.0-py3.8.egg-info
+[0.615s] running install_scripts
+[0.627s] writing list of installed files to '/mnt/f1tenth_ws/build/gap_finding/install.log'
+[0.677s] Invoked command in '/mnt/f1tenth_ws/src/gap_finding' returned '0': PYTHONPATH=/mnt/f1tenth_ws/build/gap_finding/prefix_override:/mnt/f1tenth_ws/install/gap_finding/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gap_finding build --build-base /mnt/f1tenth_ws/build/gap_finding/build install --record /mnt/f1tenth_ws/build/gap_finding/install.log --install-scripts $base/lib/gap_finding --single-version-externally-managed
