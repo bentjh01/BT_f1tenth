@@ -5,19 +5,20 @@ from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
 from ackermann_msgs.msg import AckermannDriveStamped
 from nav_msgs.msg import Odometry
-from std_msgs.msg import String
 
 class AutomaticEmergencyBraking_Algorithm():
-    def __init__(self, time2collision_threshold_0 = 3):
+    def __init__(self, time2collision_threshold_0 = 3, field_of_view = 90):
         self.time2collision_threshold_0= time2collision_threshold_0
         self.last_ranges = None
         self.angle_increment = None
         self.speed_gain = 1
+        self.field_of_view = field_of_view
 
     def update(self, ranges, odom):
         self.ranges = ranges
         self.linX = odom[3]
-        self.angle_max = self.angle_increment * len(ranges)
+        # self.angle_max = self.angle_increment * len(ranges)
+        self.set_field_of_vision()
         self.calculate_time2collision()
         return self.speed_gain
 
@@ -33,6 +34,10 @@ class AutomaticEmergencyBraking_Algorithm():
                 self.speed_gain = 0
                 break
     
+    def set_field_of_vision(self):
+        lower_bound_index = len(self.ranges)//2 - self.field_of_view//self.angle_increment//2
+        upper_bound_index = lower_bound_index + self.field_of_view//self.angle_increment
+        self.ranges = self.ranges[lower_bound_index:upper_bound_index]
 
 class AutomaticEmergencyBrakingNode(Node):
     def __init__(self):
@@ -44,13 +49,16 @@ class AutomaticEmergencyBrakingNode(Node):
         # Odometry
         self.odom_subscriber = self.create_subscription(Odometry, '/ego_racecar/odom', self.odom_callback, 10)
         self.odom_subscriber
-        # Drive
+        # Drive Subscriber
+        self.drive_subscriber = self.create_subscription(AckermannDriveStamped, '/drive', self.drive_callback, 10)
+        self.drive_subscriber
+        self.twist = (0, 0)
+        # Drive Publisher
         self.pub_rate = 20
         self.drive_publisher = self.create_publisher(AckermannDriveStamped, '/drive', 10)
         self.timer = self.create_timer(1/self.pub_rate, self.timer_callback)
         # AEB Algorithm
         self.aeb = AutomaticEmergencyBraking_Algorithm()
-        self.twist = (0, 0)
 
     def scan_callback(self, scan_msg):
         self.ranges = scan_msg.ranges
@@ -62,6 +70,9 @@ class AutomaticEmergencyBrakingNode(Node):
         linX = odom_msg.twist.twist.linear.x
         angZ = odom_msg.twist.twist.angulr.z
         self.odom = (x, y, yaw, linX, angZ)
+    
+    def drive_callback(self, drive_msg):
+        self.twist = (drive_msg.drive.speed, drive_msg.drive.steering_angle)
         
     def drive_publish(self, drive_msg):
         self.drive_publisher.publish(drive_msg)
