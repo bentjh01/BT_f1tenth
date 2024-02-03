@@ -15,18 +15,12 @@ class TestSpeed2ErpmGain(Node):
         self.last_linX = 0 # [m/s]
         self.last_time = 0 # [s]
 
-        self.publisher_ = self.create_publisher(AckermannDriveStamped, '/ackermann_cmd_mux/input/default', 10)
+        self.publisher_ = self.create_publisher(AckermannDriveStamped, '/drive', 10)
         self.timer = self.create_timer(self.publish_period, self.timer_callback)
-
-    def scan_callback(self, msg):
-        self.scan = msg
-
-    def odom_callback(self, msg):
-        self.odom = msg
+        self.start_time = self.get_clock().now().nanoseconds
 
     def timer_callback(self):
-      self.start_time = self.get_clock().now().nanoseconds
-      if self.get_clock().now().nanoseconds - self.start_time <= self.max_time:
+      if (self.get_clock().now().nanoseconds - self.start_time)/1e9 <= self.max_time:
         twist_msg = self.get_twist_msg()
         self.publisher_.publish(twist_msg)
       else:
