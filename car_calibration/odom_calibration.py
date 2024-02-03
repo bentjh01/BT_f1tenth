@@ -2,11 +2,9 @@ import math
 import numpy as np
 import rclpy
 from rclpy.node import Node
-from nav_msgs.msg import Odometry
 from ackermann_msgs.msg import AckermannDriveStamped
-from sensor_msgs.msg import LaserScan
 
-class OdomCalibration(Node):
+class TestSpeed2ErpmGain(Node):
     def __init__(self):
         super().__init__('odom_calibration')
         self.publish_period = 0.05  # [s]
@@ -17,11 +15,8 @@ class OdomCalibration(Node):
         self.last_linX = 0 # [m/s]
         self.last_time = 0 # [s]
 
-        self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
-        self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
         self.publisher_ = self.create_publisher(AckermannDriveStamped, '/ackermann_cmd_mux/input/default', 10)
         self.timer = self.create_timer(self.publish_period, self.timer_callback)
-        self.get_logger().info("Odom Calibration Node has been created")
 
     def scan_callback(self, msg):
         self.scan = msg
@@ -56,3 +51,13 @@ class OdomCalibration(Node):
       self.last_time = current_time
       self.last_linX = linX
       return twist
+
+def main(args=None):
+    rclpy.init(args=args)
+    test_speed_to_erpm_gain = TestSpeed2ErpmGain()
+    rclpy.spin(test_speed_to_erpm_gain)
+    test_speed_to_erpm_gain.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
