@@ -17,9 +17,36 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(ackermann_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+
+# Include C++ directories
+include_directories(include)
+
+# Create Cpp executable
+# add_executable(cpp_executable src/automatic_emergency_braking.cpp)
+# ament_target_dependencies(cpp_executable rclcpp)
+
+# Install Cpp executables
+# install(TARGETS
+#   cpp_executable
+#   DESTINATION lib/${PROJECT_NAME}
+# )
+
+# Install Python modules
+ament_python_install_package(${PROJECT_NAME})
+# Install Python executables
+install(PROGRAMS
+  scripts/automatic_emergency_braking.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
