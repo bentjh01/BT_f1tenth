@@ -51,16 +51,17 @@ class AutomaticEmergencyBrakingNode(Node):
         # Odometry
         self.odom_subscriber = self.create_subscription(Odometry, '/ego_racecar/odom', self.odom_callback, 10)
         self.odom_subscriber
-        # Drive Subscriber
-        self.drive_subscriber = self.create_subscription(AckermannDriveStamped, '/drive', self.drive_callback, 10)
+        # WallFollower Subscriber
+        self.drive_subscriber = self.create_subscription(AckermannDriveStamped, '/wall_follower/drive', self.drive_callback, 10)
         self.drive_subscriber
-        self.twist = (0, 0)
+        self.set_drive = AckermannDriveStamped()
         # Drive Publisher
         self.pub_rate = 20
         self.drive_publisher = self.create_publisher(AckermannDriveStamped, '/drive', 10)
         self.timer = self.create_timer(1/self.pub_rate, self.timer_callback)
         # AEB Algorithm
         self.aeb = AutomaticEmergencyBraking_Algorithm()
+        self.cmd_drive = AckermannDriveStamped()
 
     def scan_callback(self, scan_msg):
         self.ranges = scan_msg.ranges
@@ -70,27 +71,18 @@ class AutomaticEmergencyBrakingNode(Node):
         y = odom_msg.pose.pose.position.y
         yaw = odom_msg.pose.pose.orientation.z
         linX = odom_msg.twist.twist.linear.x
-        angZ = odom_msg.twist.twist.angulr.z
+        angZ = odom_msg.twist.twist.angular.z
         self.odom = (x, y, yaw, linX, angZ)
     
-    def drive_callback(self, drive_msg):
-        self.twist = (drive_msg.drive.speed, drive_msg.drive.steering_angle)
-        
-    def drive_publish(self, drive_msg):
-        self.drive_publisher.publish(drive_msg)
-
-    def timer_callback(self):
+    def drive_callback(self, ackermann_msg):
+        self.set_drive = ackermann_msg
         self.run()
 
-    def publish_drive_msg(self):
-        drive_msg = AckermannDriveStamped()
-        drive_msg.drive.speed = self.twist[0]
-        drive_msg.drive.steering_angle = self.twist[1]
-        self.drive_publisher.publish(drive_msg)
-
     def run(self):
-        self.twist = map(lambda x : x * self.aeb.update(self.ranges, self.odom), self.twist)
-        self.publish_drive_msg()
+        speed_gain = self.aeb.update(self.ranges, self.odom)
+        self.cmd_twist = self.set_twist
+        self.cmd_twist.drive/speed *= speed_gain
+        self.drive_publisher.publish(self.cmd_twist)
 
 def main(args = None):
     rclpy.init(args=args)
